@@ -1,0 +1,22 @@
+{
+  "name": "gomoku-desktop",
+  "version": "1.0.0",
+  "description": "五子棋桌面版：本地 HTTP 服务 + 自动打开浏览器，打包为单个可执行文件",
+  "main": "server.js",
+  "bin": "server.js",
+  "scripts": {
+    "build:win": "pkg . --targets node18-win-x64 --output dist/gomoku-win-x64.exe",
+    "build:linux": "pkg . --targets node18-linux-x64 --output dist/gomoku-linux-x64"
+  },
+  "pkg": {
+    "assets": [
+      "gomoku-game/index.html",
+      "gomoku-game/style.css",
+      "gomoku-game/game.js"
+    ],
+    "outputPath": "dist"
+  },
+  "devDependencies": {
+    "@yao-pkg/pkg": "^5.16.1"
+  }
+}
