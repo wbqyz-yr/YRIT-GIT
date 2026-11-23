@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>五子棋 · Gomoku</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>五子棋</h1>
+      <p class="subtitle">Gomoku · 先连成五子者胜</p>
+    </header>
+
+    <section class="status" id="status" aria-live="polite">黑方落子</section>
+
+    <div class="board-wrap">
+      <canvas id="board" width="540" height="540"></canvas>
+      <div class="overlay" id="overlay" hidden>
+        <div class="overlay-card">
+          <p class="overlay-title" id="overlay-title">黑方获胜</p>
+          <button class="btn btn-primary" id="overlay-restart">再来一局</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="controls">
+      <div class="mode-group">
+        <button class="btn mode-btn active" data-mode="pvp">双人对战</button>
+        <button class="btn mode-btn" data-mode="ai-black">人机 · 电脑执黑</button>
+        <button class="btn mode-btn" data-mode="ai-white">人机 · 电脑执白</button>
+      </div>
+      <div class="action-group">
+        <button class="btn" id="undo" disabled>悔棋</button>
+        <button class="btn btn-primary" id="restart">重新开始</button>
+      </div>
+    </section>
+
+    <footer class="footer">点击棋盘交叉点落子</footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
